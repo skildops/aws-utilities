@@ -1,4 +1,3 @@
-from traceback import print_tb
 import boto3
 import os
 import concurrent.futures
@@ -158,7 +157,7 @@ For AWS authentication please use the following variables:
 Usage: AWS_REGIONS=all python3 delete-default-vpc.py
 ''')
 else:
-    print('Preparing regions...', end=' ', flush=True)
+    print('Preparing region(s)...', end=' ', flush=True)
     if AWS_REGIONS.lower() == 'all':
         ec2 = session.client('ec2', region_name='us-east-1')
         resp = ec2.describe_regions(AllRegions=False)
@@ -168,6 +167,7 @@ else:
     else:
         AWS_REGION_IDS = [AWS_REGIONS]
     print('ok')
+
     print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     print('Default VPC in following region(s) will be deleted if they exist: {}'.format(', '.join(AWS_REGION_IDS)))
     print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
