@@ -169,7 +169,7 @@ else:
     print('ok')
 
     print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-    print('Default VPC in following region(s) will be deleted if they exist: {}'.format(', '.join(AWS_REGION_IDS)))
+    print('Default VPC in following region(s) will be deleted if they exist: \n> {}'.format('\n> '.join(AWS_REGION_IDS)))
     print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     resp = input('Are you sure you want to continue (Y/n): ').lower()
     if resp == '' or resp == 'y':
