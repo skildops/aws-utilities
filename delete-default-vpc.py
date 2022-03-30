@@ -99,7 +99,7 @@ def delete_vpc(regionId, ec2Client):
         }
 
 def delete_vpcs(regionIds):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
+    with concurrent.futures.ThreadPoolExecutor(10) as executor:
         results = [executor.submit(delete_vpc, region, session.client('ec2', region_name=region)) for region in regionIds]
 
     vpcStatus = {
