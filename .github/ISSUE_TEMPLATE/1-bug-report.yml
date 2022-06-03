@@ -12,8 +12,6 @@ body:
     options:
     - label: I am running the latest version
       required: true
-    - label: I read the documentation properly and found no answer
-      required: true
     - label: I have checked to make sure that this issue has not already been filed
       required: true
 - type: textarea
@@ -53,7 +51,7 @@ body:
         - Terraform Version:
         - Provider version:
         - Module Version:
-    render: markdown
+    render: Markdown
   validations:
     required: true
 - type: textarea
